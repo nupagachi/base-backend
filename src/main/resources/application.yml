@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: base-backend
+  server:
+    port: 8080
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_management
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none  # Ho?c "validate" n?u không mu?n Hibernate thay ??i schema
+    show-sql: true      # Hi?n th? SQL trong console
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public  # N?u b?n s? d?ng schema c? th?, hãy thay ??i
+
+  sql:
+    init:
+      mode: always  # Ch?y script SQL trong resources/schema.sql & data.sql
+
+
