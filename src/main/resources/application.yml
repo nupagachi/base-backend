@@ -11,15 +11,13 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: none  # Ho?c "validate" n?u không mu?n Hibernate thay ??i schema
-    show-sql: true      # Hi?n th? SQL trong console
+      ddl-auto: none
+    show-sql: true
     properties:
       hibernate:
         format_sql: true
-        default_schema: public  # N?u b?n s? d?ng schema c? th?, hãy thay ??i
+        default_schema: public
 
   sql:
     init:
-      mode: always  # Ch?y script SQL trong resources/schema.sql & data.sql
-
-
+      mode: always

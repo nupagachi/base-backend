@@ -26,7 +26,7 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 public class SecurityConfig {
     private final IUserService userService;
     private final JwtFilterChain jwtFilterChain;
-    private String[] WHITE_LIST = {"**"};
+    private String[] WHITE_LIST = {"/auth/**"};
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -46,7 +46,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain configure(@NonNull HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers(WHITE_LIST).permitAll().anyRequest().permitAll())
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers(WHITE_LIST).permitAll().anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(provider()).addFilterBefore(jwtFilterChain, UsernamePasswordAuthenticationFilter.class);
         return http.build();
