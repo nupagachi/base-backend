@@ -21,3 +21,6 @@ spring:
   sql:
     init:
       mode: always
+  jwt:
+    token-key: doSYMAZ1UV9wbCeF5GLFMOr1TZKXUpehKAZjPB4Ziw8ZcyQdw17v9tQlpIjKQU5A
+    refresh-token-key: Ler78PIAEHkfdRwrI3KuzWS7Pxs3BQcXEgJ4sOParRwtbiSgyfLyHkbh6yL0A3Bg

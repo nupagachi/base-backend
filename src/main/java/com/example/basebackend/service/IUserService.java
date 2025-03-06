@@ -8,4 +8,5 @@ import java.util.List;
 public interface IUserService {
     List<User> getUsers();
     UserDetailsService userDetailsService();
+    boolean createUser(User user);
 }

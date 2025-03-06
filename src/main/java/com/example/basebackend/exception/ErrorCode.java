@@ -1,5 +1,8 @@
 package com.example.basebackend.exception;
 
+import lombok.Getter;
+
+@Getter
 public enum ErrorCode {
     USER_NOT_FOUND(404, "User not found"),
     INVALID_REQUEST(400, "Invalid request"),
@@ -13,11 +16,4 @@ public enum ErrorCode {
         this.message = message;
     }
 
-    public int getStatusCode() {
-        return statusCode;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }

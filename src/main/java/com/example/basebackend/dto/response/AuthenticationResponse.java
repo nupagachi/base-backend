@@ -16,4 +16,5 @@ public class AuthenticationResponse implements Serializable {
     LocalDate expireTime;
     String refreshToken;
     LocalDate refreshExpireTime;
+    String userId;
 }

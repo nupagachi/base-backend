@@ -15,6 +15,7 @@ import java.util.Set;
 @Entity
 @Table(name = "tbl_user")
 @Getter
+@Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
